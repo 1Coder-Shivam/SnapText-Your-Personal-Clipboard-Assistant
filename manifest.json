@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "QuickText Saver",
+  "version": "1.0",
+  "description": "Store and quickly access up to 10 frequently used text entries",
+  "permissions": ["storage", "activeTab", "clipboardWrite"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data: https://fonts.gstatic.com;"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["popup.html", "styles.css", "popup.js", "*.woff2", "*.ttf", "*.woff"],
+    "matches": ["<all_urls>"]
+  }],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+} 

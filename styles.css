@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  width: 350px;
+  background-color: #ffffff;
+  padding: 16px;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Input section styles */
+.input-section {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #4CAF50;
+}
+
+/* Button styles */
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.btn-copy {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-copy:hover {
+  background-color: #1976D2;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+/* Text list styles */
+.text-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.text-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.text-content {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  margin-right: 12px;
+  word-break: break-all;
+}
+
+.text-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* Clear all button container */
+.clear-all-container {
+  text-align: right;
+}
+
+.btn-clear-all {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-clear-all:hover {
+  background-color: #d32f2f;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Copy notification */
+.copy-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  20% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+/* Chatbot Container Styles */
+#quicktext-chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+#quicktext-chatbot-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+#quicktext-chatbot-icon:hover {
+  transform: scale(1.1);
+}
+
+#quicktext-chatbot-icon span {
+  font-size: 24px;
+}
+
+#quicktext-chatbot-iframe-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+#quicktext-chatbot-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#quicktext-chatbot-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: #f44336;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#quicktext-chatbot-close:hover {
+  background: #d32f2f;
+} 
