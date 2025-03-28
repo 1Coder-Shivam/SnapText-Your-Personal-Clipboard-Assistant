@@ -18,14 +18,41 @@ function createChatbotContainer() {
   const iframeContainer = container.querySelector('#quicktext-chatbot-iframe-container');
   const closeButton = container.querySelector('#quicktext-chatbot-close');
 
-  icon.addEventListener('click', () => {
+  // Function to show iframe
+  function showIframe() {
     iframeContainer.style.display = 'block';
     icon.style.display = 'none';
-  });
+  }
 
-  closeButton.addEventListener('click', () => {
+  // Function to hide iframe
+  function hideIframe() {
     iframeContainer.style.display = 'none';
     icon.style.display = 'flex';
+  }
+
+  // Handle click on icon
+  icon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showIframe();
+  });
+
+  // Handle click on close button
+  closeButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    hideIframe();
+  });
+
+  // Handle click outside
+  document.addEventListener('click', (e) => {
+    const isClickInside = container.contains(e.target);
+    if (!isClickInside && iframeContainer.style.display === 'block') {
+      hideIframe();
+    }
+  });
+
+  // Prevent clicks inside iframe from closing it
+  iframeContainer.addEventListener('click', (e) => {
+    e.stopPropagation();
   });
 }
 
